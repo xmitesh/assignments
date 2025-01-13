@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>4-more-complicated-grid</title>
+</head>
+
+<style>
+    .container{
+        display: grid;
+        max-width: 1200px;
+        margin: 0 auto;
+        grid-template-columns: 1fr 2fr;
+        gap: 10px;
+    }
+    .left{
+        background-color: red;      
+    }
+    .left h1{
+        justify-self: center;
+    }
+    .right{
+        background-color: skyblue;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(3, 1fr);
+        gap: 10px;
+        padding: 10px;
+    }
+    .right div{
+        background-color: blue;
+        border: 1px solid black;
+        height: 100px;
+    }
+</style>
+
+<body>
+    <div class="container">
+        <div class="left"><h1>left</h1>
+        <p>text text text</p></div>
+        <div class="right">
+            <div>col1 </div>
+            <div>col2 </div>
+            <div>col3 </div>
+            <div>col1 </div>
+            <div>col2 </div>
+            <div>col3 </div>
+            <div>col1 </div>
+            <div>col2 </div>
+            <div>col3 </div>
+        </div>
+    </div>
+</body>
+
+</html>

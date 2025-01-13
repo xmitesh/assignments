@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visual studio Code</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="shortcut icon" href="images/logo.png" type="image/x-icon">
+</head>
+<body>
+    
+    <!-- navigation bar -->
+     <div class="navigationBar">
+        <div class="logo">
+            <a href="index.html"><img src="images/logo.png" alt="vs code logo" style="width: 24px; height: 24px;"></a>
+            <span class="vsc">Visual Studio Code</span>
+        </div>
+
+     <div class="navigation">
+        <li>Docs</li>
+        <li>Updates</li>
+        <li>Blog</li>
+        <li>API</li>
+        <li>Extensions</li>
+        <li>FAQ</li>
+        <li>Github Copilot</li>
+     </div>
+
+     <div class="searchBar">
+        <button type="button" style="border: none;" id="darkmode"><img src="images/lightmode.png" alt="night mode" id="modeimage"></button>
+        <div class="search">
+            <img src="images/search.png" alt="search">
+            <input type="search" name="searchBar" id="searchBar" placeholder="Search Docs">
+        </div>
+    
+        <button type="button" id="downloadVS">Download</button>
+     </div>
+    </div>
+
+     <!-- hero section -->
+      <div class="copilotbanner">
+        <img src="images/rocket.png" alt="rocket">
+        <p>Get <a href="" style="color: blue;">Github Copilot Free</a> in VS code!</p>
+      </div>
+
+      <div class="maindialogue">
+        <h1>Your Code editor.</h1>
+        <h1>Redefined with AI.</h1>
+        <div class="download-buttons">
+            <button type="button">Download</button>
+            <button type="button">Get Copilot Free</button>
+        </div>
+
+        <div class="subheadings">
+            <p><a href=""  style="color: blue;" >Web</a>,<a href="" style="color: blue;">Insiders edition</a> or <a href="" style="color: blue;">other platforms</a></p>
+        </div>
+      </div>
+      <div class="video">
+        <video src="https://code.visualstudio.com/assets/home/hero-dark-lg.webm" autoplay loop muted></video>
+      </div>
+      
+      <!-- footer section  -->
+      <div class="footer">
+        <div>
+            <h2>Code in any language</h2>
+            <p>VS Code supports almost every major programming language. Several ship in the box, like JavaScript,
+                TypeScript, CSS, and HTML, but extensions for others can be found in the VS Code Marketplace.</p>
+        </div>
+        <div class="languagePanel">
+            <div class="flex">
+                <img src="https://code.visualstudio.com/assets/home/language-js.png" alt="Javascript">
+                <code class="verticalCenter">JavaScript</code>
+            </div>
+            <div class="flex">
+                <img src="https://code.visualstudio.com/assets/home/language-ts.png" alt="TypeScript">
+                <code class="verticalCenter">TypeScript</code>
+            </div>
+            <div class="flex">
+                <img src="https://code.visualstudio.com/assets/home/language-python.png" alt="Python">
+                <code class="verticalCenter">Python</code>
+            </div>
+            <div class="flex">
+                <img src="https://code.visualstudio.com/assets/home/language-cs.png" alt="C#">
+                <code class="verticalCenter">C#</code>
+            </div>
+            <div class="flex">
+                <img src="https://code.visualstudio.com/assets/home/language-cpp.png" alt="C++">
+                <code class="verticalCenter">C++</code>
+            </div>
+            <div class="flex">
+                <img src="https://code.visualstudio.com/assets/home/language-html.png" alt="HTML">
+                <code class="verticalCenter">HTML</code>
+            </div>
+            <div class="flex">
+                <img src="https://code.visualstudio.com/assets/home/language-java.png" alt="Java">
+                <code class="verticalCenter">Java</code>
+            </div>
+            <div class="flex"> 
+                <img src="https://code.visualstudio.com/assets/home/language-json.png" alt="JSON">
+                <code class="verticalCenter">JSON</code>
+            </div>
+            <div class="flex">
+                <img src="https://code.visualstudio.com/assets/home/language-php.png" alt="PHP">
+                <code class="verticalCenter">PHP</code>
+            </div>
+            <div class="flex">
+                <img src="https://code.visualstudio.com/assets/home/language-markdown.png" alt="Markdown">
+                <code class="verticalCenter">Markdown</code>
+            </div>
+            <div class="flex">
+                <img src="https://code.visualstudio.com/assets/home/language-powershell.png" alt="Powershell">
+                <code class="verticalCenter">Powershell</code>
+            </div>
+            <div class="flex">
+                <img src="https://code.visualstudio.com/assets/home/language-yaml.png" alt="YAML">
+                <code class="verticalCenter">YAML</code>
+            </div>
+        </div>
+    </div>
+</body>
+
+<script>
+    const changeModeButton = document.getElementById('darkmode');
+    const modeImage = document.getElementById('modeimage');
+    let isDarkMode = true;
+
+    changeModeButton.addEventListener('click', () => {
+
+        const root = document.documentElement;
+        if (isDarkMode) {
+                // Switch to light mode
+                root.style.setProperty('--background', 'white');
+                root.style.setProperty('--text-fill-color', 'black');
+                root.style.setProperty('--search-bar-border', 'rgb(0, 0, 0 , 0.5)');
+                modeImage.src = 'images/darkmodefix.png';
+            } 
+            else {
+                // Switch to dark mode
+                root.style.setProperty('--background', 'black');
+                root.style.setProperty('--text-fill-color', 'white');
+                root.style.setProperty('--search-bar-border', 'rgb(255, 255, 255 , 0.5)');
+                modeImage.src = 'images/lightmode.png';
+            }
+
+            // Toggle the flag
+            isDarkMode = !isDarkMode;
+    });
+
+</script>
+
+</html>
