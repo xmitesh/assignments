@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz App</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f4f4f4;
+        }
+        h1{
+            text-align: center;
+            align-self: center;
+        }
+        .container {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            /* text-align: center; */
+            width: 400px;
+        }
+        .question {
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 18px;
+            margin-bottom: 10px;
+            font-weight: 700;
+            display: flex;
+            align-items: flex-start;
+        }
+
+        .options{
+            font-family: 'Courier New', Courier, monospace;
+            margin: 5px 5px ;
+            margin-bottom: 10px;
+    
+        }
+        .options label {
+
+            display: flex;
+            margin: 5px 0px;
+            cursor: pointer;
+        }
+        .btn {
+            background-color: blue;
+            color: white;
+            border: none;
+            padding: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            height: 3rem;
+            width: 5rem;
+            margin: 0;
+        }
+        .result {
+            margin-top: 15px;
+            font-weight: bold;
+            margin: 10px auto;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div style="display: flex; justify-content: space-between; align-items: center;">
+            <h1>Quiz App</h1>
+            <button class="btn" onclick="submitQuiz()">Submit</button>
+        </div>
+        <div id="quiz"></div>
+        <div class="result" id="result"></div>
+    </div>
+
+    <script src="data.js"></script>
+    <script type="module">
+        import { quizData } from './data.js';
+    
+        const quizContainer = document.getElementById("quiz");
+        const resultContainer = document.getElementById("result");
+    
+        function loadQuiz() {
+            quizContainer.innerHTML = quizData.map((q, index) => `
+                <div class="question">${index + 1}. ${q.question}</div>
+                <div class="options">
+                    ${['a', 'b', 'c', 'd'].map(option => `
+                        <label>
+                            <input type="radio" name="q${index}" value="${option}">
+                            ${q[option]}
+                        </label>
+                    `).join('')}
+                </div>
+            `).join('');
+        }
+    
+        function submitQuiz() {
+            let score = 0;
+            quizData.forEach((q, index) => {
+                const selected = document.querySelector(`input[name="q${index}"]:checked`);
+                if (selected && selected.value === q.correct) {
+                    score++;
+                }
+            });
+            resultContainer.innerText = `Your Score: ${score} / ${quizData.length}`;
+        }
+    
+        document.querySelector('.btn').addEventListener('click', submitQuiz);
+    
+        loadQuiz();
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>form builder</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body style="display: flex;">
+    <div class="container">
+        <h1 style="text-align: center;">Form Builder</h1>
+        <label for="field-type">select field type</label>
+        <select id="field-type" name="field-type">
+            <option value="text">text</option>
+            <option value="number">number</option>
+            <option value="mail">mail</option>
+        </select>
+
+        <label for="label">field label</label>
+        <input type="text" id="label" placeholder="Enter field label">
+
+        <button id="add-field" style="background-color: #007bff; color: white; font-weight: 600;">add field</button>
+    </div>
+
+    <div class="form">
+        <h2 style=" display: flex; justify-content: space-between; text-align: center;" >Builded form <button>submit</button></h2>
+        
+    </div>
+    
+</body>
+<script src="index.js"></script>
+</html>
+
+

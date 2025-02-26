@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>todo-app</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="column">
+            <h1>tasks</h1>
+            <input type="text" name="newtask" id="newtask">
+            <button type="button" onclick="addNewTodo()" id="input-button">add task</button>
+            <div class="tasks-column todo-tasks" data-status="todo"> 
+            </div>
+            
+        </div>
+
+    <div class="column">
+        <h1>In progress</h1>
+        <div class="tasks-column in-progress-tasks" data-status="in-progress">
+            <div class="progresstask"></div>
+        </div>
+    </div>
+
+    <div class="column">
+        <h1>Finished</h1>
+        <div class="tasks-column finished-tasks" data-status="finished">
+            <div class="finishedtask"></div>
+        </div>
+    </div>
+
+    
+    </div>
+</body>
+<script src="script.js"></script>
+</html>
+
